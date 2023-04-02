@@ -39,3 +39,13 @@ def test_string_to_number(computer):
     """Тест метода string_to_number"""
     assert computer.string_to_number('21') == 21
     assert computer.string_to_number('21.5') == 21
+
+
+def test_repr(computer):
+    """Тест метода __repr__"""
+    assert computer.__repr__() == "Item('Computer', 80000, 3)"
+
+
+def test_str(computer):
+    """Тест метода __str__"""
+    assert computer.__str__() == 'Computer'
