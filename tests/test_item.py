@@ -6,7 +6,9 @@ from src.item import Item
 @pytest.fixture
 def computer():
     return Item("Computer", 80000, 3)
-
+@pytest.fixture
+def laptop():
+    return Item("laptop", 150000, 5)
 
 def test_item_init(computer):
     """ Создаем экземпляр класса Item"""
@@ -49,3 +51,8 @@ def test_repr(computer):
 def test_str(computer):
     """Тест метода __str__"""
     assert computer.__str__() == 'Computer'
+
+def test_add(computer, laptop):
+    """Тест метода сложения"""
+    assert computer + laptop == 8
+    assert computer + 3 == 'Cложение возможно только с экземплярами класса Item и дочерними классами'
